@@ -1,11 +1,19 @@
 import React from 'react';
+import { NavLink } from 'react-router';
+import './Header.css';
+
 
 const Header = () => {
     return (
-        <div className="navbar bg-base-100 shadow-sm">
-            <div className="flex-1">
+        <div className="navbar bg-base-100 shadow-sm justify-between">
+            <div className="">
                 <a className="btn btn-ghost text-xl">daisyUI</a>
             </div>
+            <nav className='flex gap-4'>
+                <NavLink to='/'>Home</NavLink>
+                <NavLink to='mobiles'>Mobiles</NavLink>
+                <NavLink to='users'>Users</NavLink>
+            </nav>
             <div className="flex gap-2">
                 <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
                 <div className="dropdown dropdown-end">
