@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { use } from 'react';
+import User from './User';
 
-const Users = () => {
+const Users = ({usersPromise}) => {
+
+    const userData = use(usersPromise)
+    
     return (
-        <div>
-            this is users page.
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4  '>
+            {
+                userData.map(user => <User key={user.id} user={user}></User>)
+            }
         </div>
     );
 };
