@@ -35,7 +35,10 @@ const router = createBrowserRouter([
       }
     ]
   },
-  
+  {
+    path: '*',
+    element: <h2 className='text-4xl font-bold  flex flex-col   place-items-center mt-76'>404 not found </h2>
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
