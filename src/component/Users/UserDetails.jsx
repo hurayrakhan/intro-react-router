@@ -1,11 +1,11 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useNavigate } from 'react-router';
 
 const UserDetails = () => {
 
     const data = useLoaderData();
+    const navigate = useNavigate();
 
-    console.log(data)
 
     const { name, email, username, address, phone, website, company } = data;
     
@@ -13,7 +13,7 @@ const UserDetails = () => {
 
     return (
 
-        <div className=' border-2 border-blue-400 rounded-xl py-6 ml-72 w-md mt-24'>
+        <div className=' border-2 border-blue-400 rounded-xl py-6 ml-72 w-md mt-24 '>
             <h3 className='text-center text-xl font-medium pb-4'>{name}</h3>
             <div className='border-t-2 border-blue-400 rounded-xl p-6'>
                 <p className='py-2'>Username : @{username}</p>
@@ -28,7 +28,12 @@ const UserDetails = () => {
                     <li className='ml-7'>City : {city}</li>
                     <li className='ml-7'>Zipcode : {zipcode}</li>
                 </ul>
+                
             </div>
+            <div className='place-items-center text-center'>
+                <button onClick={() => navigate(-1)} className='btn btn-soft mt-3 '>Go Back</button>
+            </div>
+            
         </div>
 
     );

@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       {
         path: 'users',
         element: 
-        <Suspense>
+        <Suspense fallback={<p>Loading...</p>}>
           <Users usersPromise={usersPromise }></Users>
         </Suspense>
       },
@@ -35,6 +35,7 @@ const router = createBrowserRouter([
       }
     ]
   },
+  
 ]);
 
 createRoot(document.getElementById('root')).render(
